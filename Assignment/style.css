@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+body > div {
+  margin: 3% auto 0; /* trên trái+phải dưới */
+  max-width: 1200px;
+}
+.title {
+  font-size: 50px;
+  font-weight: bolder;
+  color: #e13c73;
+  text-align: center;
+}
+.tabs {
+  justify-content: center;
+  display: flex;
+  position: relative;
+}
+.tabs.line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 6px;
+  border-radius: 15px;
+  background-color: #c23564;
+  transition: all 0.2s ease;
+}
+/* left bottom width để hết bằng 0 khi onclick nó tự độ thêm vào mà ko bị lỗi độ dài */
+
+.tab-item {
+  min-width: 100px;
+  padding: 16px 20px 10px 20px;
+  /* ko cần line height vì padding rồi thì box tự động dãn ra  */
+  font-size: 20px;
+  text-align: center;
+  color: #e13c73;
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 5px solid transparent;
+  opacity: 0.6; /*  độ mờ */
+  transition: all 0.5s ease;
+  cursor: context-menu;
+}
+
+.tab-item:hover {
+  opacity: 2;
+  background-color: rgba(194, 53, 100, 0.05);
+  border-color: rgba(194, 53, 100, 0.1);
+}
+
+.tab-item .active {
+  color: #e13c73;
+  opacity: 1;
+}
+
+/* slideshow */
+.slideShow {
+  width: 100%;
+  position: relative;
+}
+
+.control {
+  position: absolute;
+  width: 86%;
+  top: 47%;
+  margin: 0 7%;
+}
+.prew {
+  float: left;
+  width: 40px;
+  height: 40px;
+  color: black;
+  border-radius: 100%;
+  background-color: rgb(242, 242, 242);
+  line-height: 45px;
+  text-align: center;
+  cursor: context-menu;
+}
+.next {
+  float: right;
+  width: 40px;
+  height: 40px;
+  color: black;
+  border-radius: 100%;
+  background-color: rgb(242, 242, 242);
+  line-height: 45px;
+  text-align: center;
+  cursor: context-menu;
+}
+
+.next:hover {
+  color: white;
+  background-color: #ff74a2;
+  box-shadow: 0px 0px 3px gray;
+}
+.prew:hover {
+  color: white;
+  background-color: #ff74a2;
+  box-shadow: 0px 0px 3px gray;
+}
+.slide-items {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+.slide-item > img {
+  width: 100%;
+}
+
+.slide-item {
+  display: none;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.slide-item.active {
+  display: block;
+}
+.tab-pane {
+  display: none;
+}
+.tab-pane.active {
+  display: block;
+}
+.text {
+  clear: both;
+  width: 100%;
+  color: white;
+  position: absolute;
+  text-align: center;
+  justify-items: center;
+  bottom: 2%;
+}
